@@ -302,6 +302,212 @@ setInterval(()=>{incrementCounter("users");},2000);
 setInterval(()=>{incrementCounter("collabs");},2500);
 setInterval(()=>{incrementCounter("cashback");},2200);
 
+</script>
+
+</body>
+</html>
+<p>See how my simple strategies made <strong>Tees Media</strong>, one of my mentees, move from making ₦500,000 monthly to ₦6,000,000 monthly with zero stress, zero anxiety, and zero panic. Just applying my simple codes and strategies… Tees Media is now a testimony!</p>
+</div>
+
+<div class="text-section">
+<h2>Why Stream Africa?</h2>
+<p>Ask yourself, if Stream Africa is not the best, why would the <strong>BIGGEST STREAMER IN AFRICA</strong> join? The opportunity you won't see somewhere else! Better join us now!</p>
+<p>The Stream Africa reward system is designed to be efficient, transparent, and sustainable. The best part? You don’t need to invite anyone to start earning.</p>
+</div>
+
+<h2>Live Platform Statistics</h2>
+<div class="counter-box">
+  <div class="counter"><h2 id="users">0</h2><p>Active Streamers</p></div>
+  <div class="counter"><h2 id="collabs">0</h2><p>Collaborations Completed</p></div>
+  <div class="counter"><h2 id="cashback">0</h2><p>Cashbacks Processed</p></div>
+</div>
+<section id="earnings">
+<h2>💸 Total Earnings by Streamers</h2>
+<h1 id="liveEarnings">$,000</h1>
+<p>Watch how quickly our community earns in real time!</p>
+</section>
+
+<h2>Collaboration Features</h2>
+
+<div class="card">
+<h3>🎧 Audio Collab — Where Listening Pays</h3>
+<p>Stream promoted music, interact with official sound projects, and earn $1.5 per qualified action. Each song contributes to the artist’s growth while giving you real cash rewards. Your ears are your assets, your time is income.</p>
+</div>
+
+  <div class="card">
+<h3>📝 Assignment Hustle — Help & Earn</h3>
+<p>Assist students by completing assignments online. Choose tasks you can handle, submit quality work, and earn real cash for every assignment completed. This is a flexible way to make extra income from home or anywhere using your smartphone or laptop. Build your skills, help students, and get paid for your time and knowledge.</p>
+  </div>
+
+<div class="card">
+<h3>🎬 Video Collab — Watch, Promote, Profit</h3>
+<p>Engage with official videos like trailers, promos, campaigns, and studio releases. Every view and interaction is tracked and paid at $2.7 per action. Help brands reach global audiences while you earn.</p>
+</div>
+
+  <div class="card">
+<h3>💬 Chat With Foreigners — Talk & Get Paid</h3>
+<p>Engage in simple text or voice conversations with foreigners and earn daily. Each chat can bring up to ₦15,000 per day. Work anytime, anywhere, using just your phone. This is a flexible side hustle that lets you make money while practicing communication skills and connecting with people from around the world. Your chats are your paychecks!</p>
+  </div>
+
+<div class="card">
+<h3>🔴 Livestream Collab — Show Up. Engage. Earn</h3>
+<p>Participate in livestream sessions hosted by creators and studios. Co-streamers and active viewers also earn. Interact, comment, and support the session — your presence is now profitable.</p>
+</div>
+
+<div class="card">
+<h3>🖼 Snap Collab — Visuals Pay You</h3>
+<p>Engage with official artworks, posters, and campaign creatives. Every interaction gives $1.1 per action. Creativity and attention now translate into tangible earnings.</p>
+</div>
+
+<div class="card">
+<h3>📥 File Download — Download to Earn</h3>
+<p>Support creators by downloading official files like music, documents, and multimedia resources. Earn $1 per download while helping content owners expand reach. Even a simple click now works for you!</p>
+</div>
+
+<h2>Activation Fee</h2>
+<div class="card">
+<p><strong>Registration Fee:</strong> ₦12,000</p>
+<p><strong>Cashback:</strong> 100% immediately after registration</p>
+<a href="https://paystack.shop/pay/9vq4-7j-e9" target="_blank" class="paystack-btn">💳 Pay ₦12,000 Now (Secure Payment)</a>
+<a class="btn" onclick="showSection('register')">Register Now</a>
+</div>
+</section>
+
+<section id="register" style="display:none;">
+<h2>Register on Stream Africa</h2>
+<form onsubmit="showSection('payment'); return false;">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+<input type="password" placeholder="Create Password" required>
+<button type="submit">Register & Continue</button>
+</form>
+</section>
+
+<section id="payment" style="display:none;">
+<h2>Complete Your Payment</h2>
+<div class="payment-box">
+<h3>Pay with Paystack</h3>
+<a href="https://paystack.shop/pay/9vq4-7j-e9" target="_blank" class="paystack-btn">🔥 Pay ₦12,000 Now</a>
+<p>After completing payment, click below to submit proof.</p>
+<button onclick="showSection('submit-proof')">I Have Made Payment</button>
+</div>
+</section>
+
+<section id="submit-proof" style="display:none;">
+<h2>Submit Payment Proof</h2>
+<form onsubmit="submitProof(event)">
+<input type="text" placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
+<input type="tel" placeholder="Phone Number" required>
+<select required>
+<option value="">Select Payment Method</option>
+<option>Paystack</option>
+<option>Bank Transfer</option>
+</select>
+<input type="text" placeholder="Transaction ID / Reference Number" required id="trackingID">
+<input type="file" required>
+<textarea placeholder="Additional Notes (Optional)"></textarea>
+
+<div class="timer-box">
+Countdown to submission: <span id="submitTimer">20:00</span>
+</div>
+
+<button type="submit">Submit & Continue</button>
+</form>
+
+<div class="success-message" id="successBox">
+✅ Your proof has been submitted successfully.<br>
+Redirecting you to our official support...
+<div class="support-buttons">
+<a href="#" id="openTelegram">Open Telegram Now</a>
+<a href="#" id="openWhatsApp">Contact WhatsApp Support</a>
+</div>
+</div>
+</section>
+
+<div id="popup-container"></div>
+
+<footer>
+© 2026 Stream Africa. All Rights Reserved.
+</footer>
+
+<script>
+function showSection(id){
+  const sections=['home','register','payment','submit-proof'];
+  sections.forEach(sec=>{document.getElementById(sec).style.display=(sec===id)?'block':'none';});
+  window.scrollTo(0,0);
+}
+
+/* --- CONTINUOUS COUNTERS --- */
+function animateValue(id,start,end,duration){
+  let range=end-start,current=start,increment=end>start?1:-1,stepTime=Math.abs(Math.floor(duration/range)),obj=document.getElementById(id);
+  let timer=setInterval(()=>{current+=increment;obj.innerHTML=current.toLocaleString();if(current===end)clearInterval(timer);},stepTime);
+}
+animateValue("users",0,5428,2000);
+animateValue("collabs",0,18934,2500);
+animateValue("cashback",0,3207,2200);
+
+let liveEarnings=50000;
+function updateLiveEarnings(){liveEarnings+=Math.floor(Math.random()*300+100);document.getElementById("liveEarnings").innerText=`$${liveEarnings.toLocaleString()}`;}
+setInterval(updateLiveEarnings,2000);
+
+/* --- LIVE POPUPS ALL POSITIONS --- */
+const liveMessages=[
+"Daniel A. just joined from Lagos",
+"Sarah M. completed Video Collab",
+"Michael T. received cashback",
+"New user verified",
+"Faith just joined from Nigeria",
+"Miracle just got verified",
+"David just joined from Ghana",
+"Hajara from Abuja just subscribed to STREAM 12,000",
+"MICHAEL from DELTA just subscribed to STREAM 12,000",
+"Elijah just subscribed to STREAM 12,000",
+"Marcus just subscribed to STREAM 12,000",
+"Aiden just subscribed to STREAM 12,000",
+"Sofia just subscribed to STREAM 12,000"
+];
+const positions=["users","collabs","cashback","top","left-side","right-side"];
+function createLivePopup(){
+  const msg=liveMessages[Math.floor(Math.random()*liveMessages.length)];
+  const pos=positions[Math.floor(Math.random()*positions.length)];
+  const popup=document.createElement("div");
+  popup.className="popup show";
+  popup.innerText=msg;
+  popup.style.position="fixed";popup.style.zIndex=9999;
+  switch(pos){
+    case "users":case "collabs":case "cashback":
+      const elem=document.getElementById(pos);
+      const rect=elem.getBoundingClientRect();
+      popup.style.left=rect.left+window.scrollX+"px";
+      popup.style.top=rect.top+window.scrollY-40+"px";
+      break;
+    case "top":popup.style.top="20px";popup.style.left="50%";popup.style.transform="translateX(-50%)";break;
+    case "left-side":popup.style.top=Math.floor(Math.random()*300+50)+"px";popup.style.left="10px";break;
+    case "right-side":popup.style.top=Math.floor(Math.random()*300+50)+"px";popup.style.right="10px";break;
+  }
+  document.body.appendChild(popup);
+  let floatPos=0;
+  const floatInterval=setInterval(()=>{
+    floatPos+=1;
+    if(pos.includes("side")) popup.style.top=parseInt(popup.style.top)-1+"px";
+    else if(pos==="top") popup.style.top=parseInt(popup.style.top)-0.5+"px";
+    else popup.style.top=rect.top+window.scrollY-40-floatPos+"px";
+    if(floatPos>=50) clearInterval(floatInterval);
+  },20);
+  setTimeout(()=>{popup.classList.remove("show");popup.classList.add("hide");setTimeout(()=>{popup.remove();},1000);},4000);
+}
+setInterval(createLivePopup,Math.floor(Math.random()*4000)+2000);
+
+/* --- CONTINUOUS COUNTER INCREMENTS --- */
+function incrementCounter(id,minInc=1,maxInc=5){
+  const elem=document.getElementById(id);let current=parseInt(elem.innerText.replace(/,/g,''))||0;current+=Math.floor(Math.random()*(maxInc-minInc+1))+minInc;elem.innerText=current.toLocaleString();
+}
+setInterval(()=>{incrementCounter("users");},2000);
+setInterval(()=>{incrementCounter("collabs");},2500);
+setInterval(()=>{incrementCounter("cashback");},2200);
+
 /* --- SUBMIT PROOF WITH TRACKING ID AND TIMER --- */
 let submitTime=20*60; // 20 minutes countdown
 function updateSubmitTimer(){
